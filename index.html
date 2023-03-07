@@ -5,10 +5,31 @@
 <style>
     body, html {
     background-color:rgb(250, 250, 250);
-    text-align: center;
     font: 400 15px/1.8 "Lato", sans-serif;
     }
-    /*newly added items start faded out and translated 400px upwards on the y-axis*/
+    /* Solid border */
+    hr.solid {
+    border-top: 3px solid #bbb;
+    }
+    .hero-image {
+    background-image: url("https://dx5683gi1tv0w.cloudfront.net/dtrjyhj9q/image/upload/w_1920/s3/img02zd8w278");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    }
+
+    .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    }
+    /*newly added items start faded out and translated 100px upwards on the y-axis*/
     .fall {
         opacity: 0;
         animation: new-item-animation .3s linear forwards;
@@ -27,9 +48,13 @@
     }
 </style>
 <body>
-    <div class="fall">
-        <img class="fall" style="border-radius: 25%;" src="./images/Profile.png" alt="Profile Picture">
-        <h1 style="color:rgb(0, 0, 0);">SkyTheNerd</h1>
-        <body style="color:rgba(0, 0, 0, 0.5);">Programmer - Martial Artist - Straight-A Student</body>
+    <div class="hero-image">
+        <div class="hero-text">
+            <div class="fall">
+                <img class="fall" style="border-radius: 25%;" src="./images/Profile.png" alt="Profile Picture">
+                <h1 style="color:rgb(255, 255, 255);">SkyTheNerd</h1>
+                <body style="color:rgba(0, 0, 0, 0.5);">Programmer - Martial Artist - Straight-A Student</body>
+            </div>
+        </div>
     </div>
 </body>
