@@ -6,6 +6,7 @@
   position: relative;
   margin: auto;
 }
+
 @media (min-width:1700px) {
   .Showcase-Text {
     position: absolute;
@@ -14,6 +15,7 @@
     width: 600px;
   }
 }
+
 @media (max-width:1700px) {
   .Showcase-Text {
     position: absolute;
@@ -22,6 +24,7 @@
     width: 300px; 
   }
 }
+
 @media (max-width: 870px) {
   .Showcase-Text {
     position: absolute;
@@ -29,10 +32,6 @@
     left: 0%;
     width: 150px;
   }  
-}
-/* Hide the images by default */
-.mySlides {
-  display: none;
 }
 
 div.normal {
