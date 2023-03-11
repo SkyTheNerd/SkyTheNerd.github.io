@@ -1,6 +1,9 @@
 <head>
     <title>Sky's Personal Website</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <link href="scroll.css" rel="stylesheet" />
+    <link href="slides.css" rel="stylesheet" />
+    <script src="slides.js"></script>
 </head>
 <style>
     body, html {
@@ -9,92 +12,10 @@
     overflow-y: hidden;
     background-color:rgb(250, 250, 250);
     font: 400 15px/1.8 "Lato", sans-serif;
-    margin: 0%
+    margin: 0%;
     }
     h4 {
         font: 400 15px/1.8 "Lato", sans-serif;
-    }
-    .demo a {
-    bottom: 80%;
-    left: 50%;
-    z-index: 2;
-    display: inline-block;
-    -webkit-transform: translate(0, 200%);
-    transform: translate(0, 200%);
-    color: #fff;
-    font : normal 400 20px/1 'Josefin Sans', sans-serif;
-    letter-spacing: .1em;
-    text-decoration: none;
-    transition: opacity .3s;
-    }
-    .demo a:hover {
-    opacity: .5;
-    }
-    section {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    }
-    section::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 80%;
-    }
-    section h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font : normal 300 64px/1 'Josefin Sans', sans-serif;
-    text-align: center;
-    white-space: nowrap;
-    }
-
-    #section04 a {
-    padding-top: 60px;
-    }
-    #section04 a span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    -webkit-animation: sdb04 2s infinite;
-    animation: sdb04 2s infinite;
-    box-sizing: border-box;
-    }
-    @-webkit-keyframes sdb04 {
-    0% {
-        -webkit-transform: rotate(-45deg) translate(0, 0);
-    }
-    20% {
-        -webkit-transform: rotate(-45deg) translate(-10px, 10px);
-    }
-    40% {
-        -webkit-transform: rotate(-45deg) translate(0, 0);
-    }
-    }
-    @keyframes sdb04 {
-    0% {
-        transform: rotate(-45deg) translate(0, 0);
-    }
-    20% {
-        transform: rotate(-45deg) translate(-10px, 10px);
-    }
-    40% {
-        transform: rotate(-45deg) translate(0, 0);
-    }
     }
     .hero-image {
     background-image: url("https://dx5683gi1tv0w.cloudfront.net/dtrjyhj9q/image/upload/w_1920/s3/img02zd8w278");
@@ -117,10 +38,10 @@
     /*newly added items start faded out and translated 100px upwards on the y-axis*/
     .fall {
         opacity: 0;
-        animation: new-item-animation .4s linear forwards;
+        animation: fall .4s linear forwards;
     }
 
-    @keyframes new-item-animation {
+    @keyframes fall {
         from {
             opacity: 0;
             transform: translateY(-100px);
@@ -131,21 +52,75 @@
             transform : translateY(0);
         }
     }
+    .fade-in {
+        opacity: 0;
+        animation: 1s fade-in .4s linear forwards;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+    }
+
+        to {
+            opacity: 1;
+        }
+    }
+    .Project-Showcase {
+        position: relative;
+        margin-left:33.5%;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
 </style>
 <body>
     <div class="hero-image">
         <div class="hero-text">
             <div class="fall">
                 <img class="fall" style="border-radius: 25%;" src="./images/Profile.png" alt="Profile Picture">
-                <h1 style="color:rgb(255, 255, 255);">SkyTheNerd</h1>
+                <h1 style="color:rgb(255, 255, 255);">Skyler Jones</h1>
                 <h4>Programmer - Martial Artist - Straight-A Student</h4>
-                <section id="section04" class="demo">
-                    <a href="#NextPage"><span></span>Scroll</a>
+            </div>
+            <div class="fade-in">
+                <section id="section01" class="scroll">
+                    <a onclick="currentSlide(1)" href="#NextPage"><span></span>Scroll</a>
                 </section>
             </div>
         </div>
     </div>
-    <div id="NextPage">
-        <h1>Sample Text</h1>
+    <div id="NextPage" style="height: 100%">
+        <div class="mySlides fade">
+            <img class="Project-Showcase" src="./images/PokemonGunSample.png" alt="Pikachu getting Pikaboomed">
+            <div style="position: absolute; bottom: -200px; left: 0%;">
+                <h1>Projects:</h1>
+                <h2>Pokemon Gun</h2>
+                <h4>Pokemon Gun is a </body><b>private</b><body> game where you shoot innocent creatures with no reward.</h4>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img style="height: 720px; width: 1280px;" class="Project-Showcase" src="./images/BunkerBrowser.png" alt="Bunker Browser">
+            <div style="position: absolute; bottom: -200px; left: 0%;">
+                <h1>Projects:</h1>
+                <h2>Bunker Browser</h2>
+                <h4>Bunker Browser is an offline firewall bypasser inspired by Bunker by cattn.</h4>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img style="height: 720px; width: 1280px;" class="Project-Showcase" src="./images/133220.jpg" alt="Sample Text">
+            <div style="position: absolute; bottom: -200px; left: 0%;">
+                <h1>Projects:</h1>
+                <h2>Sample Text</h2>
+                <h4>Oh well...</h4>
+            </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
     </div>
 </body>
